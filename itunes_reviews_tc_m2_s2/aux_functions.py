@@ -42,13 +42,6 @@ def transform_category_list(cat_list: list, leave_set=True):
     return cat_list
 
 
-def transform_category_df(df):
-    """Aggregates the categories into larger groups in the podcast reviews dataset"""
-    df_copy = df.copy()
-
-    return df_copy
-
-
 def axis_titles(
     ax: plt.Axes,
     xtitle: Optional[str] = None,
