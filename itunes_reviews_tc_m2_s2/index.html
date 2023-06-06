@@ -98,20 +98,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#imports-and-options" id="toc-imports-and-options" class="nav-link active" data-scroll-target="#imports-and-options">Imports and Options</a></li>
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#database-overview" id="toc-database-overview" class="nav-link" data-scroll-target="#database-overview">Database Overview</a></li>
-  <li><a href="#podcast-characteristics" id="toc-podcast-characteristics" class="nav-link" data-scroll-target="#podcast-characteristics">Podcast characteristics</a></li>
-  <li><a href="#reviewer-characteristics" id="toc-reviewer-characteristics" class="nav-link" data-scroll-target="#reviewer-characteristics">Reviewer Characteristics</a></li>
+  <li><a href="#imports-and-options" id="toc-imports-and-options" class="nav-link" data-scroll-target="#imports-and-options"><span class="header-section-number">1.1</span> Imports and Options</a></li>
   </ul></li>
-  <li><a href="#user-negativity-analysis" id="toc-user-negativity-analysis" class="nav-link" data-scroll-target="#user-negativity-analysis">User Negativity Analysis</a>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">2</span> Exploratory Data Analysis</a>
   <ul class="collapse">
-  <li><a href="#are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not" id="toc-are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not" class="nav-link" data-scroll-target="#are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not">Are Users that gave a “1” rating once more likely to rate badly again than those who did not?</a></li>
-  <li><a href="#is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different" id="toc-is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different" class="nav-link" data-scroll-target="#is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different">Is the average of other ratings between “1-raters” and “1-non-raters” different?</a></li>
-  <li><a href="#sec-only_bad" id="toc-sec-only_bad" class="nav-link" data-scroll-target="#sec-only_bad">What is the percentage of people that only leave bad ratings ( below 3)?</a></li>
+  <li><a href="#database-overview" id="toc-database-overview" class="nav-link" data-scroll-target="#database-overview"><span class="header-section-number">2.1</span> Database Overview</a></li>
+  <li><a href="#podcast-characteristics" id="toc-podcast-characteristics" class="nav-link" data-scroll-target="#podcast-characteristics"><span class="header-section-number">2.2</span> Podcast characteristics</a></li>
+  <li><a href="#reviewer-characteristics" id="toc-reviewer-characteristics" class="nav-link" data-scroll-target="#reviewer-characteristics"><span class="header-section-number">2.3</span> Reviewer Characteristics</a></li>
   </ul></li>
-  <li><a href="#rating-polarization-analysis" id="toc-rating-polarization-analysis" class="nav-link" data-scroll-target="#rating-polarization-analysis">Rating Polarization Analysis</a></li>
+  <li><a href="#user-negativity-analysis" id="toc-user-negativity-analysis" class="nav-link" data-scroll-target="#user-negativity-analysis"><span class="header-section-number">3</span> User Negativity Analysis</a>
+  <ul class="collapse">
+  <li><a href="#are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not" id="toc-are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not" class="nav-link" data-scroll-target="#are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not"><span class="header-section-number">3.1</span> Are Users that gave a “1” rating once more likely to rate badly again than those who did not?</a></li>
+  <li><a href="#is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different" id="toc-is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different" class="nav-link" data-scroll-target="#is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different"><span class="header-section-number">3.2</span> Is the average of other ratings between “1-raters” and “1-non-raters” different?</a></li>
+  <li><a href="#sec-only_bad" id="toc-sec-only_bad" class="nav-link" data-scroll-target="#sec-only_bad"><span class="header-section-number">3.3</span> What is the percentage of people that only leave bad ratings ( below 3)?</a></li>
+  </ul></li>
+  <li><a href="#rating-polarization-analysis" id="toc-rating-polarization-analysis" class="nav-link" data-scroll-target="#rating-polarization-analysis"><span class="header-section-number">4</span> Rating Polarization Analysis</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">5</span> Conclusions</a></li>
   </ul>
 </nav>
 </div>
@@ -134,8 +138,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="imports-and-options" class="level3">
-<h3 class="anchored" data-anchor-id="imports-and-options">Imports and Options</h3>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>This is an analysis of the iTunes podcast reviews dataset from Kaggle, which can be found <a href="https://www.kaggle.com/datasets/thoughtvector/podcastreviews/versions/28">here</a>. The goal of this analysis is to provide an overview of the dataset and investigate two premises:</p>
+<ol type="A">
+<li>There is a tendency for certain reviewers to consistently post negative reviews.<br></li>
+<li>Some topics exhibit higher polarization, resulting in more extreme ratings compared to more neutral topics.</li>
+</ol>
+<p>Examining these premises could provide valuable insights for developing the podcast suggestion algorithm for iTunes users.</p>
+<section id="biases-and-limitations" class="level4" data-number="1.0.1">
+<h4 data-number="1.0.1" class="anchored" data-anchor-id="biases-and-limitations"><span class="header-section-number">1.0.1</span> Biases and limitations</h4>
+<p>The author declares no biases. The data analysis was performed by not differentiating the reviews by into different batches that they were scraped in.</p>
+</section>
+<section id="imports-and-options" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="imports-and-options"><span class="header-section-number">1.1</span> Imports and Options</h3>
+<section id="imports" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="imports"><span class="header-section-number">1.1.1</span> Imports</h4>
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Show the code</summary>
@@ -163,17 +181,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+</section>
+<section id="options" class="level4" data-number="1.1.2">
+<h4 data-number="1.1.2" class="anchored" data-anchor-id="options"><span class="header-section-number">1.1.2</span> Options</h4>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>base_fig_width <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>base_fig_height <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dpi <span class="op">=</span> get_monitors()[<span class="dv">0</span>].width <span class="op">/</span> (get_monitors()[<span class="dv">0</span>].width_mm <span class="op">/</span> <span class="fl">25.4</span>)<span class="op">*</span><span class="fl">0.9</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dpi <span class="op">=</span> get_monitors()[<span class="dv">0</span>].width <span class="op">/</span> (get_monitors()[<span class="dv">0</span>].width_mm <span class="op">/</span> <span class="fl">25.4</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> <span class="st">"plotly_mimetype+notebook_connected"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="download-and-unzip-the-dataset" class="level5">
-<h5 class="anchored" data-anchor-id="download-and-unzip-the-dataset">Download and unzip the dataset:</h5>
+</section>
+<section id="fetching-the-data" class="level4" data-number="1.1.3">
+<h4 data-number="1.1.3" class="anchored" data-anchor-id="fetching-the-data"><span class="header-section-number">1.1.3</span> Fetching the data</h4>
+<section id="download-and-unzip-commands" class="level5">
+<h5 class="anchored" data-anchor-id="download-and-unzip-commands">Download and unzip commands:</h5>
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Show the code</summary>
@@ -200,15 +224,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>con.execute(<span class="st">"ATTACH DATABASE 'database.sqlite'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>&lt;duckdb.DuckDBPyConnection at 0x7fa7ce9be930&gt;</code></pre>
+<pre><code>&lt;duckdb.DuckDBPyConnection at 0x7f5c609a9bb0&gt;</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
-<section id="database-overview" class="level3">
-<h3 class="anchored" data-anchor-id="database-overview">Database Overview</h3>
+</section>
+</section>
+<section id="exploratory-data-analysis" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exploratory-data-analysis"><span class="header-section-number">2</span> Exploratory Data Analysis</h2>
+<section id="database-overview" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="database-overview"><span class="header-section-number">2.1</span> Database Overview</h3>
 <section id="what-are-the-tables-and-their-columns" class="level5">
 <h5 class="anchored" data-anchor-id="what-are-the-tables-and-their-columns">What are the tables and their columns?</h5>
 <div class="cell" data-execution_count="6">
@@ -255,8 +281,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="what-is-the-number-of-rows-in-each-table" class="level4">
-<h4 class="anchored" data-anchor-id="what-is-the-number-of-rows-in-each-table">What is the number of rows in each table?</h4>
+<section id="what-is-the-number-of-rows-in-each-table" class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="what-is-the-number-of-rows-in-each-table"><span class="header-section-number">2.1.1</span> What is the number of rows in each table?</h4>
 <div class="cell" data-execution_count="7">
 <details>
 <summary>Show the code</summary>
@@ -297,8 +323,9 @@ reviews: 2.07M</code></pre>
 </div>
 </div>
 <p>The category table has more entries than the podcast table suggesting that podcasts can be tagged in more than one category.</p>
-<section id="are-all-podcasts-accounted-for-in-the-categories-table" class="level5">
-<h5 class="anchored" data-anchor-id="are-all-podcasts-accounted-for-in-the-categories-table">Are all podcasts accounted for in the categories table?</h5>
+</section>
+<section id="are-all-podcasts-accounted-for-in-the-categories-table" class="level4" data-number="2.1.2">
+<h4 data-number="2.1.2" class="anchored" data-anchor-id="are-all-podcasts-accounted-for-in-the-categories-table"><span class="header-section-number">2.1.2</span> Are all podcasts accounted for in the categories table?</h4>
 <div class="cell" data-execution_count="8">
 <details>
 <summary>Show the code</summary>
@@ -319,8 +346,8 @@ reviews: 2.07M</code></pre>
 </div>
 <p>All podcasts have at least one category assigned.</p>
 </section>
-<section id="the-number-of-categories-of-the-podcasts" class="level5">
-<h5 class="anchored" data-anchor-id="the-number-of-categories-of-the-podcasts">The number of categories of the podcasts:</h5>
+<section id="what-is-the-number-of-different-categories" class="level4" data-number="2.1.3">
+<h4 data-number="2.1.3" class="anchored" data-anchor-id="what-is-the-number-of-different-categories"><span class="header-section-number">2.1.3</span> What is the number of different categories?</h4>
 <div class="cell" data-execution_count="9">
 <details>
 <summary>Show the code</summary>
@@ -336,11 +363,10 @@ reviews: 2.07M</code></pre>
 </div>
 </section>
 </section>
-</section>
-<section id="podcast-characteristics" class="level3">
-<h3 class="anchored" data-anchor-id="podcast-characteristics">Podcast characteristics</h3>
-<section id="review-number-and-rating-distribution-amongst-podcasts" class="level4">
-<h4 class="anchored" data-anchor-id="review-number-and-rating-distribution-amongst-podcasts">Review number and rating distribution amongst podcasts</h4>
+<section id="podcast-characteristics" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="podcast-characteristics"><span class="header-section-number">2.2</span> Podcast characteristics</h3>
+<section id="review-number-and-rating-distribution-amongst-podcasts" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="review-number-and-rating-distribution-amongst-podcasts"><span class="header-section-number">2.2.1</span> Review number and rating distribution amongst podcasts</h4>
 <section id="extracting-the-number-of-reviews-and-average-rating-of-each-podcast" class="level5">
 <h5 class="anchored" data-anchor-id="extracting-the-number-of-reviews-and-average-rating-of-each-podcast">Extracting the number of reviews and average rating of each podcast:</h5>
 <div class="cell" data-execution_count="10">
@@ -405,8 +431,8 @@ reviews: 2.07M</code></pre>
 <p>There is a negative exponential distribution of the number of reviews that the podcasts are getting, with the majority having only several reviews as seen in <a href="#fig-reviews-pod">Figure&nbsp;1</a>. Yet there are podcasts with more than 30 thousand reviews. An exponential trend can also be seen in the ratings that the podcasts are getting. The majority of ratings are “5”, with lower number progressively being rarer. The “1” rating is an exception, being higher than the neighbors.</p>
 </section>
 </section>
-<section id="the-category-distribution-of-podcasts." class="level4">
-<h4 class="anchored" data-anchor-id="the-category-distribution-of-podcasts.">The category distribution of podcasts.</h4>
+<section id="the-category-distribution-of-podcasts." class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="the-category-distribution-of-podcasts."><span class="header-section-number">2.2.2</span> The category distribution of podcasts.</h4>
 <section id="extracting-tagged-categories-for-each-podcast" class="level5">
 <h5 class="anchored" data-anchor-id="extracting-tagged-categories-for-each-podcast">Extracting tagged categories for each podcast:</h5>
 <div class="cell" data-execution_count="12">
@@ -424,7 +450,9 @@ reviews: 2.07M</code></pre>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>podcasts_categories[<span class="st">"num_categories"</span>] <span class="op">=</span> podcasts_categories[<span class="st">"category"</span>].<span class="bu">apply</span>(<span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Is there any missing data in the extraction?</p>
+</section>
+<section id="is-there-any-missing-data-in-the-extraction" class="level5">
+<h5 class="anchored" data-anchor-id="is-there-any-missing-data-in-the-extraction">Is there any missing data in the extraction?</h5>
 <div class="cell" data-execution_count="13">
 <details>
 <summary>Show the code</summary>
@@ -481,7 +509,9 @@ dtype: bool</code></pre>
 </div>
 </div>
 </div>
-<p>Sample categories:</p>
+</section>
+<section id="sample-categories" class="level5">
+<h5 class="anchored" data-anchor-id="sample-categories">Sample categories:</h5>
 <div class="cell" data-execution_count="15">
 <details>
 <summary>Show the code</summary>
@@ -501,35 +531,35 @@ dtype: bool</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>[sports, arts]</td>
+<td>[comedy]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>[education-self-improvement, education]</td>
+<td>[comedy-stand-up, comedy]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>[religion-spirituality, christianity]</td>
+<td>[society-culture]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>[education-self-improvement, education]</td>
+<td>[spirituality, religion-spirituality, arts-per...</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>[business-entrepreneurship]</td>
+<td>[society-culture, arts]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
-<td>[tv-film-tv-reviews, tv-film]</td>
+<td>[tv-film-film-reviews, tv-film]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
-<td>[health-fitness, comedy]</td>
+<td>[tv-film, society-culture-personal-journals, s...</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
-<td>[news]</td>
+<td>[business-careers, business]</td>
 </tr>
 </tbody>
 </table>
@@ -549,7 +579,9 @@ dtype: bool</code></pre>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Sample categories after aggregation:</p>
+</section>
+<section id="sample-categories-after-aggregation" class="level5">
+<h5 class="anchored" data-anchor-id="sample-categories-after-aggregation">Sample categories after aggregation:</h5>
 <div class="cell" data-execution_count="17">
 <details>
 <summary>Show the code</summary>
@@ -569,23 +601,23 @@ dtype: bool</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>{arts, sports}</td>
+<td>{comedy}</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>{education}</td>
+<td>{comedy}</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>{spirituality-religion}</td>
+<td>{society}</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>{education}</td>
+<td>{spirituality-religion, arts}</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>{business}</td>
+<td>{society, arts}</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
@@ -593,11 +625,11 @@ dtype: bool</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
-<td>{comedy, health}</td>
+<td>{society, tv}</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
-<td>{news}</td>
+<td>{business}</td>
 </tr>
 </tbody>
 </table>
@@ -649,8 +681,8 @@ dtype: bool</code></pre>
 </div>
 </section>
 </section>
-<section id="how-many-times-were-podcasts-tagged-in-each-category" class="level4">
-<h4 class="anchored" data-anchor-id="how-many-times-were-podcasts-tagged-in-each-category">How many times were podcasts tagged in each category?</h4>
+<section id="how-many-times-were-podcasts-tagged-in-each-category" class="level4" data-number="2.2.3">
+<h4 data-number="2.2.3" class="anchored" data-anchor-id="how-many-times-were-podcasts-tagged-in-each-category"><span class="header-section-number">2.2.3</span> How many times were podcasts tagged in each category?</h4>
 <section id="calculating-the-number-of-tags-for-each-aggregated-category" class="level5">
 <h5 class="anchored" data-anchor-id="calculating-the-number-of-tags-for-each-aggregated-category">Calculating the number of tags for each aggregated category:</h5>
 <div class="cell" data-execution_count="19">
@@ -690,8 +722,8 @@ dtype: bool</code></pre>
 </div>
 </section>
 </section>
-<section id="category-ratings" class="level4">
-<h4 class="anchored" data-anchor-id="category-ratings">Category ratings</h4>
+<section id="category-ratings" class="level4" data-number="2.2.4">
+<h4 data-number="2.2.4" class="anchored" data-anchor-id="category-ratings"><span class="header-section-number">2.2.4</span> Category ratings</h4>
 <section id="what-is-the-average-rating-and-number-of-reviews-for-podcasts-in-each-category" class="level5">
 <h5 class="anchored" data-anchor-id="what-is-the-average-rating-and-number-of-reviews-for-podcasts-in-each-category">What is the average rating and number of reviews for podcasts in each category?</h5>
 </section>
@@ -720,6 +752,9 @@ dtype: bool</code></pre>
 <span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    ).fetchone()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+</section>
+<section id="preparing-the-data-for-the-bubble-plot" class="level5">
+<h5 class="anchored" data-anchor-id="preparing-the-data-for-the-bubble-plot">Preparing the data for the bubble plot:</h5>
 <div class="cell" data-execution_count="22">
 <details>
 <summary>Show the code</summary>
@@ -733,6 +768,9 @@ dtype: bool</code></pre>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>cat_colors <span class="op">=</span> sns.color_palette(<span class="st">"deep"</span>, <span class="bu">len</span>(category_stats))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+</section>
+<section id="bubble-plot" class="level5">
+<h5 class="anchored" data-anchor-id="bubble-plot">Bubble plot:</h5>
 <div class="cell" data-execution_count="23">
 <details>
 <summary>Show the code</summary>
@@ -756,9 +794,9 @@ dtype: bool</code></pre>
 <div id="fig-cat-overview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 
-<div>                            <div id="bd6d221d-246d-482c-b7ca-33313e585943" class="plotly-graph-div" style="height:460.0754716981132px; width:736.1207547169811px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("bd6d221d-246d-482c-b7ca-33313e585943")) {                    Plotly.newPlot(                        "bd6d221d-246d-482c-b7ca-33313e585943",                        [{"hovertemplate":"<b>%{hovertext}</b><br><br>ratings_per_pod=%{x}<br>average_rating=%{y}<br>Frequency=%{marker.size}<extra></extra>","hovertext":["society","education","business","comedy","spirituality-religion","arts","sports","health","tv","leisure","news","music","kids","technology","science","history","fiction","true-crime","government"],"legendgroup":"","marker":{"color":"#636efa","size":[19441,13005,12931,12803,12771,9675,9280,8731,8285,7011,6606,6161,3321,3235,2186,1663,1594,1264,940],"sizemode":"area","sizeref":48.6025,"symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":[23.413970474769815,17.49373317954633,17.56971618590983,27.819885964227133,11.977840419700884,15.075762273901809,20.817780172413794,21.608864963921658,21.430295715147857,14.51447725003566,28.8283378746594,10.007304009089433,32.36886479975911,14.784544049459042,21.769441903019214,35.60072158749249,22.362609786700126,128.5996835443038,16.47553191489362],"xaxis":"x","y":[4.5537301923807805,4.816158694715744,4.845673741384015,4.627031989623166,4.832789650190562,4.730978074565673,4.625667092846901,4.790323692007611,4.525592790763166,4.758001591965487,4.311704473850032,4.7713080853134375,4.748197624119743,4.529647904992891,4.531583592502312,4.522414026079319,4.595831229310441,4.1638572746847125,4.43010266675276],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Reviews per Podcast"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Average Rating"}},"legend":{"tracegroupgap":0,"itemsizing":"constant"},"margin":{"t":25,"l":65,"r":10,"b":30},"height":460.0754716981132,"width":736.1207547169811},                        {"responsive": true}                    ).then(function(){
+<div>                            <div id="50e351e3-1cce-49f0-a18e-ec890f8dca17" class="plotly-graph-div" style="height:511.1949685534591px; width:817.9119496855345px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("50e351e3-1cce-49f0-a18e-ec890f8dca17")) {                    Plotly.newPlot(                        "50e351e3-1cce-49f0-a18e-ec890f8dca17",                        [{"hovertemplate":"<b>%{hovertext}</b><br><br>ratings_per_pod=%{x}<br>average_rating=%{y}<br>Frequency=%{marker.size}<extra></extra>","hovertext":["society","education","business","comedy","spirituality-religion","arts","sports","health","tv","leisure","news","music","kids","technology","science","history","fiction","true-crime","government"],"legendgroup":"","marker":{"color":"#636efa","size":[19441,13005,12931,12803,12771,9675,9280,8731,8285,7011,6606,6161,3321,3235,2186,1663,1594,1264,940],"sizemode":"area","sizeref":48.6025,"symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":[23.413970474769815,17.49373317954633,17.56971618590983,27.819885964227133,11.977840419700884,15.075762273901809,20.817780172413794,21.608864963921658,21.430295715147857,14.51447725003566,28.8283378746594,10.007304009089433,32.36886479975911,14.784544049459042,21.769441903019214,35.60072158749249,22.362609786700126,128.5996835443038,16.47553191489362],"xaxis":"x","y":[4.5537301923807805,4.816158694715744,4.845673741384015,4.627031989623166,4.832789650190562,4.730978074565673,4.625667092846901,4.790323692007611,4.525592790763166,4.758001591965487,4.311704473850032,4.7713080853134375,4.748197624119743,4.529647904992891,4.531583592502312,4.522414026079319,4.595831229310441,4.1638572746847125,4.43010266675276],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Reviews per Podcast"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Average Rating"}},"legend":{"tracegroupgap":0,"itemsizing":"constant"},"margin":{"t":25,"l":65,"r":10,"b":30},"height":511.1949685534591,"width":817.9119496855345},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('bd6d221d-246d-482c-b7ca-33313e585943');
+var gd = document.getElementById('50e351e3-1cce-49f0-a18e-ec890f8dca17');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -845,10 +883,10 @@ if (outputEl) {{
 </section>
 </section>
 </section>
-<section id="reviewer-characteristics" class="level3">
-<h3 class="anchored" data-anchor-id="reviewer-characteristics">Reviewer Characteristics</h3>
-<section id="how-many-reviewers-left-reviews" class="level4">
-<h4 class="anchored" data-anchor-id="how-many-reviewers-left-reviews">How many reviewers left reviews?</h4>
+<section id="reviewer-characteristics" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="reviewer-characteristics"><span class="header-section-number">2.3</span> Reviewer Characteristics</h3>
+<section id="how-many-reviewers-left-reviews" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="how-many-reviewers-left-reviews"><span class="header-section-number">2.3.1</span> How many reviewers left reviews?</h4>
 <div class="cell" data-execution_count="25">
 <details>
 <summary>Show the code</summary>
@@ -866,8 +904,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="what-is-the-distribution-of-the-number-of-reviews-each-reviewer-wrote" class="level4">
-<h4 class="anchored" data-anchor-id="what-is-the-distribution-of-the-number-of-reviews-each-reviewer-wrote">What is the distribution of the number of reviews each reviewer wrote?</h4>
+<section id="what-is-the-distribution-of-the-number-of-reviews-each-reviewer-wrote" class="level4" data-number="2.3.2">
+<h4 data-number="2.3.2" class="anchored" data-anchor-id="what-is-the-distribution-of-the-number-of-reviews-each-reviewer-wrote"><span class="header-section-number">2.3.2</span> What is the distribution of the number of reviews each reviewer wrote?</h4>
 <section id="extracting-the-number-of-reviews-per-user" class="level5">
 <h5 class="anchored" data-anchor-id="extracting-the-number-of-reviews-per-user">Extracting the number of reviews per user:</h5>
 <div class="cell" data-execution_count="26">
@@ -976,8 +1014,8 @@ if (outputEl) {{
 <p>No significant correlation was observed.</p>
 </section>
 </section>
-<section id="what-is-the-distribution-of-ratings-amongst-most-prolific-users-10-reviews" class="level4">
-<h4 class="anchored" data-anchor-id="what-is-the-distribution-of-ratings-amongst-most-prolific-users-10-reviews">What is the distribution of ratings amongst most prolific users (&gt;10 reviews)?</h4>
+<section id="what-is-the-distribution-of-ratings-amongst-most-prolific-users-10-reviews" class="level4" data-number="2.3.3">
+<h4 data-number="2.3.3" class="anchored" data-anchor-id="what-is-the-distribution-of-ratings-amongst-most-prolific-users-10-reviews"><span class="header-section-number">2.3.3</span> What is the distribution of ratings amongst most prolific users (&gt;10 reviews)?</h4>
 <section id="fetching-the-information-about-the-reviews-from-users-that-rated-more-than-10-times" class="level5">
 <h5 class="anchored" data-anchor-id="fetching-the-information-about-the-reviews-from-users-that-rated-more-than-10-times">Fetching the information about the reviews from users that rated more than 10 times:</h5>
 <div class="cell" data-execution_count="30">
@@ -1021,8 +1059,8 @@ if (outputEl) {{
 <p>The majority of users that wrote hundreds of reviews gave exclusively “5” point ratings. This raises suspicion of bot activity.</p>
 </section>
 </section>
-<section id="what-were-some-of-the-reviews-that-a-user-who-wrote-more-than-600-reviews-gave" class="level4">
-<h4 class="anchored" data-anchor-id="what-were-some-of-the-reviews-that-a-user-who-wrote-more-than-600-reviews-gave">What were some of the reviews that a user who wrote more than 600 reviews gave?</h4>
+<section id="what-were-some-of-the-reviews-that-a-user-who-wrote-more-than-600-reviews-gave" class="level4" data-number="2.3.4">
+<h4 data-number="2.3.4" class="anchored" data-anchor-id="what-were-some-of-the-reviews-that-a-user-who-wrote-more-than-600-reviews-gave"><span class="header-section-number">2.3.4</span> What were some of the reviews that a user who wrote more than 600 reviews gave?</h4>
 <section id="getting-5-random-reviews-of-a-specific-user" class="level5">
 <h5 class="anchored" data-anchor-id="getting-5-random-reviews-of-a-specific-user">Getting 5 random reviews of a specific user:</h5>
 <div class="cell" data-execution_count="32">
@@ -1055,19 +1093,19 @@ if (outputEl) {{
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    display(Markdown(<span class="st">"Title: "</span> <span class="op">+</span> comment[<span class="dv">0</span>] <span class="op">+</span> <span class="st">" Comment: "</span> <span class="op">+</span> comment[<span class="dv">1</span>] <span class="op">+</span> <span class="st">"&lt;br /&gt;"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p>Title: Awesome Podcast!!! Comment: Dr.&nbsp;Willie, host of the Dr.&nbsp;Willie Jolley’s Wealthy Ways podcast, highlights all aspects of wealth and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
+<p>Title: Awesome Podcast!!! Comment: Gary, host of the Biohackers Lab podcast, highlight all aspects of health, fitness and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
 </div>
 <div class="cell-output cell-output-display">
-<p>Title: Awesome Podcast!!! Comment: Aymann, host of the Man Up podcast, highlight all aspects of relationships, life changes and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
+<p>Title: Awesome Podcast!!! Comment: Kathleen, host of theInbound Success Podcast, highlights all aspects of marketing and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
 </div>
 <div class="cell-output cell-output-display">
-<p>Title: Awesome Podcast!!! Comment: Erik, host of the Village Global’s Venture Stories podcast, highlights all aspects of entrepreneurs, investors and tech industry leaders and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
+<p>Title: Awesome Podcast!!! Comment: Ben, host of the Go Creative Show podcast, highlight all aspects of arts and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
 </div>
 <div class="cell-output cell-output-display">
-<p>Title: Awesome Podcast!!! Comment: The host of the Planet Money podcast, highlight all aspects of news and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
+<p>Title: Awesome Podcast!!! Comment: Craig, host of the Early to Rise Radio podcast, highlights all aspects of self improvement, success and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
 </div>
 <div class="cell-output cell-output-display">
-<p>Title: Awesome Podcast!!! Comment: Carrie, host of The Executive Innovation Sho‪w‬ podcast, highlights all aspects of technology and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
+<p>Title: Awesome Podcast!!! Comment: Mike &amp; Euvie, host of the Future Thinkers Podcast, highlights all aspects of technology, innovation and more in this can’t miss podcast! The host and expert guests offer insightful advice and information that is helpful to anyone that listens!<br></p>
 </div>
 </div>
 <p>All of the reviews follow an identical pattern and since this user wrote more than six hundred of these, we can suspect that it’s a bot, along with some of the other users.</p>
@@ -1075,8 +1113,8 @@ if (outputEl) {{
 </section>
 </section>
 </section>
-<section id="user-negativity-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="user-negativity-analysis">User Negativity Analysis</h2>
+<section id="user-negativity-analysis" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="user-negativity-analysis"><span class="header-section-number">3</span> User Negativity Analysis</h2>
 <p>The underlying premise of this section posits that certain authors might exhibit a consistent tendency to include a higher proportion of negative reviews compared to others. To examine this premise, we focus on a specific population of <b>users who have submitted between 5 and 10 reviews</b>. The selection of this range is arbitrary but serves as a means to identify users who have provided a reasonable number of reviews, indicating genuine engagement rather than automated or excessively frequent reviewing. Moreover, <b>users who have exclusively rated items with either a “5” or a “1” have been excluded</b> from this population of interest.</p>
 <p>To investigate this premise, three distinct statistical experiments were devised to address the following inquiries:</p>
 <ol type="1">
@@ -1109,8 +1147,8 @@ if (outputEl) {{
 </details>
 </div>
 </section>
-<section id="are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not" class="level3">
-<h3 class="anchored" data-anchor-id="are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not">Are Users that gave a “1” rating once more likely to rate badly again than those who did not?</h3>
+<section id="are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="are-users-that-gave-a-1-rating-once-more-likely-to-rate-badly-again-than-those-who-did-not"><span class="header-section-number">3.1</span> Are Users that gave a “1” rating once more likely to rate badly again than those who did not?</h3>
 <p>In this experiment, the users were segregated into two distinct groups based on their rating behavior: those who had assigned a “1” rating at least once, referred to as “<b>1-raters</b>,” and those who had never provided a “1” rating, referred to as “<b>1-non-raters</b>.” To ensure that the initial “1” rating did not bias the results, the lowest-rated review from each user was excluded. Subsequently, the population was further divided into two subgroups: those who had given at least one additional rating lower than “3” (either “1” or “2”) and those who had not. The disparity in proportions between the individuals who had given another negative rating and those who had not, among both the 1-raters and 1-non-raters, was then calculated.</p>
 <section id="splitting-the-users-into-two-groups" class="level5">
 <h5 class="anchored" data-anchor-id="splitting-the-users-into-two-groups">Splitting the users into two groups:</h5>
@@ -1148,8 +1186,8 @@ if (outputEl) {{
 </details>
 </div>
 </section>
-<section id="how-many-people-gave-at-least-one-1-rating" class="level4">
-<h4 class="anchored" data-anchor-id="how-many-people-gave-at-least-one-1-rating">How many people gave at least one “1” rating?</h4>
+<section id="how-many-people-gave-at-least-one-1-rating" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="how-many-people-gave-at-least-one-1-rating"><span class="header-section-number">3.1.1</span> How many people gave at least one “1” rating?</h4>
 <div class="cell" data-execution_count="38">
 <details>
 <summary>Show the code</summary>
@@ -1162,8 +1200,8 @@ Name: rated_1, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="what-is-the-difference-in-proportions-of-people-who-gave-another-bad-rating-between-1-raters-and-1-non-raters" class="level4">
-<h4 class="anchored" data-anchor-id="what-is-the-difference-in-proportions-of-people-who-gave-another-bad-rating-between-1-raters-and-1-non-raters">What is the difference in proportions of people who gave another bad rating between “1-raters” and “1-non-raters”?</h4>
+<section id="what-is-the-difference-in-proportions-of-people-who-gave-another-bad-rating-between-1-raters-and-1-non-raters" class="level4" data-number="3.1.2">
+<h4 data-number="3.1.2" class="anchored" data-anchor-id="what-is-the-difference-in-proportions-of-people-who-gave-another-bad-rating-between-1-raters-and-1-non-raters"><span class="header-section-number">3.1.2</span> What is the difference in proportions of people who gave another bad rating between “1-raters” and “1-non-raters”?</h4>
 <section id="what-are-the-proportions-of-users-who-rated-badly-again-between-the-two-groups" class="level5">
 <h5 class="anchored" data-anchor-id="what-are-the-proportions-of-users-who-rated-badly-again-between-the-two-groups">What are the proportions of users who rated badly again between the two groups?</h5>
 <div class="cell" data-execution_count="39">
@@ -1241,8 +1279,8 @@ Name: rated_1, dtype: int64</code></pre>
 <p>When one of the proportions is small in absolute terms, relying solely on the difference in proportions may not provide a complete picture. Instead, calculating the ratio of proportions offers a better understanding of the disparity between the populations. Using a ratio allows us to compare the proportions and assess the relative magnitude of the difference, providing a more nuanced interpretation of the results.</p>
 </section>
 </section>
-<section id="what-is-the-ratio-of-the-proportions-of-users-who-gave-another-low-rating-between-1-raters-and-1-non-raters" class="level4">
-<h4 class="anchored" data-anchor-id="what-is-the-ratio-of-the-proportions-of-users-who-gave-another-low-rating-between-1-raters-and-1-non-raters">What is the ratio of the proportions of users who gave another low rating between 1-raters and 1-non-raters:</h4>
+<section id="what-is-the-ratio-of-the-proportions-of-users-who-gave-another-low-rating-between-1-raters-and-1-non-raters" class="level4" data-number="3.1.3">
+<h4 data-number="3.1.3" class="anchored" data-anchor-id="what-is-the-ratio-of-the-proportions-of-users-who-gave-another-low-rating-between-1-raters-and-1-non-raters"><span class="header-section-number">3.1.3</span> What is the ratio of the proportions of users who gave another low rating between 1-raters and 1-non-raters:</h4>
 <section id="katz-logarithmic-95-confidence-intervals-for-the-ratio-of-population-proportions" class="level5">
 <h5 class="anchored" data-anchor-id="katz-logarithmic-95-confidence-intervals-for-the-ratio-of-population-proportions">Katz logarithmic 95% confidence intervals for the ratio of population proportions:</h5>
 <div class="cell" data-execution_count="43">
@@ -1299,8 +1337,8 @@ Name: rated_1, dtype: int64</code></pre>
 </section>
 </section>
 </section>
-<section id="is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different" class="level3">
-<h3 class="anchored" data-anchor-id="is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different">Is the average of other ratings between “1-raters” and “1-non-raters” different?</h3>
+<section id="is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="is-the-average-of-other-ratings-between-1-raters-and-1-non-raters-different"><span class="header-section-number">3.2</span> Is the average of other ratings between “1-raters” and “1-non-raters” different?</h3>
 <p>This section examines the disparity in means of ratings between the two groups established in the initial experiment. The average ratings were calculated from the lists with the single worst rating removed for each user in both groups. By comparing the means of ratings, we aim to assess whether there is a significant difference in the average ratings between the two groups.</p>
 <section id="calculating-the-average-rating-for-each-user" class="level5">
 <h5 class="anchored" data-anchor-id="calculating-the-average-rating-for-each-user">Calculating the average rating for each user:</h5>
@@ -1399,8 +1437,8 @@ Name: rated_1, dtype: int64</code></pre>
 <p>The average rating of 1-raters is significantly lower than that of 1-non-raters, which also supports the initial premise.</p>
 </section>
 </section>
-<section id="sec-only_bad" class="level3">
-<h3 class="anchored" data-anchor-id="sec-only_bad">What is the percentage of people that only leave bad ratings ( below 3)?</h3>
+<section id="sec-only_bad" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="sec-only_bad"><span class="header-section-number">3.3</span> What is the percentage of people that only leave bad ratings ( below 3)?</h3>
 <section id="identifying-the-users-who-only-left-ratings-1-and-2" class="level5">
 <h5 class="anchored" data-anchor-id="identifying-the-users-who-only-left-ratings-1-and-2">Identifying the users who only left ratings “1” and “2”</h5>
 <div class="cell" data-execution_count="51">
@@ -1493,14 +1531,14 @@ Name: rated_1, dtype: int64</code></pre>
 <figure class="figure">
 <iframe width="800" height="500" src="https://lookerstudio.google.com/embed/reporting/c71f2848-3e5f-48c4-b46e-0a8fbe0da22b/page/knaSD" frameborder="0" style="border:0" allowfullscreen="">
 </iframe>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Top categories rated by negative users identified in <a href="#sec-only_bad">Section&nbsp;2.3</a> . The bars display the percentage of reviews left by the negative users when compared to the total amount of reviews for that category.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Top categories rated by negative users identified in <a href="#sec-only_bad">Section&nbsp;3.3</a> . The bars display the percentage of reviews left by the negative users when compared to the total amount of reviews for that category.</figcaption><p></p>
 </figure>
 </div>
 </section>
 </section>
 </section>
-<section id="rating-polarization-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="rating-polarization-analysis">Rating Polarization Analysis</h2>
+<section id="rating-polarization-analysis" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="rating-polarization-analysis"><span class="header-section-number">4</span> Rating Polarization Analysis</h2>
 <p>The underlying premise of this section posits that podcasts centered around certain topics, such as politics, may exhibit a higher degree of polarization in user ratings. This polarization suggests that such podcasts are more likely to receive a significant number of very positive or very negative ratings, while receiving fewer ratings in the moderate range. This phenomenon may indicate that user evaluations are influenced more by personal biases rather than the quality of the podcasts.</p>
 <p>To examine this premise, a new metric called “<b>polarization points</b>” was introduced. This metric assigned two points for each “1” or “5” rating, one point for each “2” or “4” rating, and zero points for “3” ratings. The distribution of these polarization points across various categories was then evaluated. By analyzing this distribution, we aim to assess whether podcasts with specific topics, such as politics, exhibit a higher concentration of extreme ratings and a lower presence of moderate ratings, supporting the notion of polarization in user evaluations.</p>
 <section id="getting-the-list-of-non-aggregated-category-names" class="level5">
@@ -1560,45 +1598,54 @@ Name: rated_1, dtype: int64</code></pre>
 </div>
 <p>It should be noted that since podcasts can be tagged in several different topics, some of the reviews are counted in repeatedly in different topics.</p>
 </section>
-<section id="calculating-polarization-points-for-each-category" class="level5">
-<h5 class="anchored" data-anchor-id="calculating-polarization-points-for-each-category">Calculating polarization points for each category:</h5>
+<section id="removing-badly-imported-topics." class="level5">
+<h5 class="anchored" data-anchor-id="removing-badly-imported-topics.">Removing badly imported topics.</h5>
 <div class="cell" data-execution_count="58">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">"pol_points"</span>] <span class="op">=</span> topic_stats.<span class="bu">apply</span>(</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> row: pol_points(row[<span class="st">"ratings"</span>], row[<span class="st">"freq"</span>]), axis<span class="op">=</span><span class="dv">1</span></span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>topic_stats<span class="op">=</span>topic_stats[topic_stats.<span class="bu">apply</span>(<span class="kw">lambda</span> x:<span class="bu">len</span>(x[<span class="st">'ratings'</span>])<span class="op">==</span><span class="bu">len</span>(x[<span class="st">'freq'</span>]),axis<span class="op">=</span><span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="calculating-polarization-points-for-each-category" class="level5">
+<h5 class="anchored" data-anchor-id="calculating-polarization-points-for-each-category">Calculating polarization points for each category:</h5>
+<div class="cell" data-execution_count="59">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">"pol_points"</span>] <span class="op">=</span> topic_stats.<span class="bu">apply</span>(</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> row: pol_points(row[<span class="st">"ratings"</span>], row[<span class="st">"freq"</span>]), axis<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="calculating-the-margin-of-error-for-the-average-of-ratings-in-each-category" class="level5">
 <h5 class="anchored" data-anchor-id="calculating-the-margin-of-error-for-the-average-of-ratings-in-each-category">Calculating the margin of error for the average of ratings in each category:</h5>
-<div class="cell" data-execution_count="59">
+<div class="cell" data-execution_count="60">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">'ME'</span>]<span class="op">=</span>stats.norm.ppf(((<span class="dv">1</span> <span class="op">+</span> <span class="fl">0.95</span>) <span class="op">/</span> <span class="dv">2</span>))<span class="op">*</span>topic_stats[<span class="st">'std'</span>]<span class="op">/</span>(topic_stats[<span class="st">'n'</span>]<span class="op">**</span><span class="fl">0.5</span>)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>topic_stats.index.name<span class="op">=</span><span class="st">'topic'</span></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">'avg_rating'</span>]<span class="op">=</span>topic_stats[<span class="st">'avg_rating'</span>].astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">'ME'</span>]<span class="op">=</span>stats.norm.ppf(((<span class="dv">1</span> <span class="op">+</span> <span class="fl">0.95</span>) <span class="op">/</span> <span class="dv">2</span>))<span class="op">*</span>topic_stats[<span class="st">'std'</span>]<span class="op">/</span>(topic_stats[<span class="st">'n'</span>]<span class="op">**</span><span class="fl">0.5</span>)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>topic_stats.index.name<span class="op">=</span><span class="st">'topic'</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">'avg_rating'</span>]<span class="op">=</span>topic_stats[<span class="st">'avg_rating'</span>].astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="the-top-topics-by-polarization-points" class="level5">
 <h5 class="anchored" data-anchor-id="the-top-topics-by-polarization-points">The top topics by polarization points:</h5>
-<div class="cell" data-execution_count="60">
+<div class="cell" data-execution_count="61">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>Markdown(</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    tabulate(</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>        topic_stats[[<span class="st">'avg_rating'</span>,<span class="st">'pol_points'</span>]]</span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>        .sort_values(<span class="st">"pol_points"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>        .head(),</span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>        showindex<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>        headers<span class="op">=</span><span class="st">"keys"</span>,</span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>        tablefmt<span class="op">=</span><span class="st">"pipe"</span>,</span>
-<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>Markdown(</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    tabulate(</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>        topic_stats[[<span class="st">'avg_rating'</span>,<span class="st">'pol_points'</span>]]</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>        .sort_values(<span class="st">"pol_points"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>        .head(),</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>        showindex<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>        headers<span class="op">=</span><span class="st">"keys"</span>,</span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>        tablefmt<span class="op">=</span><span class="st">"pipe"</span>,</span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="61">
 <div id="tbl-pol-point" class="anchored">
 <table class="table table-sm table-striped small">
 <caption>Table&nbsp;3: Topic with most polarization points.</caption>
@@ -1631,9 +1678,9 @@ Name: rated_1, dtype: int64</code></pre>
 <td style="text-align: right;">1.97243</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">hinduism</td>
-<td style="text-align: right;">4.86036</td>
-<td style="text-align: right;">1.97196</td>
+<td style="text-align: left;">education-self-improvement</td>
+<td style="text-align: right;">4.87677</td>
+<td style="text-align: right;">1.96421</td>
 </tr>
 </tbody>
 </table>
@@ -1645,53 +1692,53 @@ Name: rated_1, dtype: int64</code></pre>
 </section>
 <section id="creating-a-scatter-plot-of-average-ratings-and-polarization-points-with-a-linear-fit" class="level5">
 <h5 class="anchored" data-anchor-id="creating-a-scatter-plot-of-average-ratings-and-polarization-points-with-a-linear-fit">Creating a scatter plot of average ratings and polarization points with a linear fit:</h5>
-<div class="cell" data-execution_count="61">
+<div class="cell" data-execution_count="62">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter <span class="op">=</span> px.scatter(</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    topic_stats,</span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"avg_rating"</span>,</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pol_points"</span>,</span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span>topic_stats.index,</span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>    trendline<span class="op">=</span><span class="st">"ols"</span>,</span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>base_fig_width <span class="op">*</span> dpi,</span>
-<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span>base_fig_height <span class="op">*</span> dpi,</span>
-<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">"avg_rating"</span>: <span class="st">"Average Rating"</span>, <span class="st">"pol_points"</span>: <span class="st">"Review Polarization Points"</span>},</span>
-<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a>pol_line_results <span class="op">=</span> px.get_trendline_results(fig_topics_scatter)[<span class="st">"px_fit_results"</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter <span class="op">=</span> px.scatter(</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>    topic_stats,</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"avg_rating"</span>,</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pol_points"</span>,</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span>topic_stats.index,</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>    trendline<span class="op">=</span><span class="st">"ols"</span>,</span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span>base_fig_width <span class="op">*</span> dpi,</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span>base_fig_height <span class="op">*</span> dpi,</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{<span class="st">"avg_rating"</span>: <span class="st">"Average Rating"</span>, <span class="st">"pol_points"</span>: <span class="st">"Review Polarization Points"</span>},</span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>pol_line_results <span class="op">=</span> px.get_trendline_results(fig_topics_scatter)[<span class="st">"px_fit_results"</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="the-r-square-of-the-linear-fit" class="level5">
 <h5 class="anchored" data-anchor-id="the-r-square-of-the-linear-fit">The R-square of the linear fit:</h5>
-<div class="cell" data-execution_count="62">
+<div class="cell" data-execution_count="63">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(pol_line_results.rsquared,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(pol_line_results.rsquared,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="62">
-<pre><code>0.834</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="63">
+<pre><code>0.833</code></pre>
 </div>
 </div>
 </section>
 <section id="evaluating-the-distribution-of-residuals-from-the-fit" class="level5">
 <h5 class="anchored" data-anchor-id="evaluating-the-distribution-of-residuals-from-the-fit">Evaluating the distribution of residuals from the fit:</h5>
-<div class="cell" data-execution_count="63">
+<div class="cell" data-execution_count="64">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>fig_line_resids, (ax_resid_hist, ax_resid_qq) <span class="op">=</span> plt.subplots(</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(base_fig_width, base_fig_height)</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>ax_resid_hist.hist(pol_line_results.resid)</span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>dist_metrics <span class="op">=</span> {}</span>
-<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>dist_metrics[<span class="st">"shape"</span>, <span class="st">"loc"</span>, <span class="st">"scale"</span>] <span class="op">=</span> stats.norm.fit(pol_line_results.resid)</span>
-<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>probplot(</span>
-<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>    pol_line_results.resid,</span>
-<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>    dist<span class="op">=</span><span class="st">"norm"</span>,</span>
-<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>    sparams<span class="op">=</span>(dist_metrics[<span class="st">"shape"</span>, <span class="st">"loc"</span>, <span class="st">"scale"</span>]),</span>
-<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>    plot<span class="op">=</span>ax_resid_qq,</span>
-<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>fig_line_resids, (ax_resid_hist, ax_resid_qq) <span class="op">=</span> plt.subplots(</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(base_fig_width, base_fig_height)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>ax_resid_hist.hist(pol_line_results.resid)</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>dist_metrics <span class="op">=</span> {}</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>dist_metrics[<span class="st">"shape"</span>, <span class="st">"loc"</span>, <span class="st">"scale"</span>] <span class="op">=</span> stats.norm.fit(pol_line_results.resid)</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>probplot(</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>    pol_line_results.resid,</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>    dist<span class="op">=</span><span class="st">"norm"</span>,</span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>    sparams<span class="op">=</span>(dist_metrics[<span class="st">"shape"</span>, <span class="st">"loc"</span>, <span class="st">"scale"</span>]),</span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>    plot<span class="op">=</span>ax_resid_qq,</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-line-resids" class="quarto-figure quarto-figure-center anchored">
@@ -1706,50 +1753,50 @@ Name: rated_1, dtype: int64</code></pre>
 </section>
 <section id="calculating-the-root-mean-squared-error-of-residuals-and-margin-of-error" class="level5">
 <h5 class="anchored" data-anchor-id="calculating-the-root-mean-squared-error-of-residuals-and-margin-of-error">Calculating the root mean squared error of residuals and margin of error:</h5>
-<div class="cell" data-execution_count="64">
+<div class="cell" data-execution_count="65">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>pol_line_RMSE <span class="op">=</span> np.sqrt(np.mean(pol_line_results.resid<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>pol_line_ME <span class="op">=</span> stats.t.ppf((<span class="dv">1</span> <span class="op">+</span> <span class="fl">0.90</span>) <span class="op">/</span> <span class="dv">2</span>, <span class="bu">len</span>(topic_stats)<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span> pol_line_RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>pol_line_RMSE <span class="op">=</span> np.sqrt(np.mean(pol_line_results.resid<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>pol_line_ME <span class="op">=</span> stats.t.ppf((<span class="dv">1</span> <span class="op">+</span> <span class="fl">0.90</span>) <span class="op">/</span> <span class="dv">2</span>, <span class="bu">len</span>(topic_stats)<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span> pol_line_RMSE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="generating-margin-of-error-lines" class="level5">
 <h5 class="anchored" data-anchor-id="generating-margin-of-error-lines">Generating margin of error lines:</h5>
-<div class="cell" data-execution_count="65">
+<div class="cell" data-execution_count="66">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>line_er_x<span class="op">=</span>np.linspace(topic_stats[<span class="st">'avg_rating'</span>].<span class="bu">min</span>(),<span class="dv">5</span>,<span class="dv">100</span>)</span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>line_fit<span class="op">=</span>np.polyfit(topic_stats[<span class="st">'avg_rating'</span>].values,topic_stats[<span class="st">'pol_points'</span>].values,<span class="dv">1</span>)</span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>positive_line_er_y<span class="op">=</span>np.poly1d(line_fit)(line_er_x)<span class="op">+</span>pol_line_ME</span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>negative_line_er_y<span class="op">=</span>np.poly1d(line_fit)(line_er_x)<span class="op">-</span>pol_line_ME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>line_er_x<span class="op">=</span>np.linspace(topic_stats[<span class="st">'avg_rating'</span>].<span class="bu">min</span>(),<span class="dv">5</span>,<span class="dv">100</span>)</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>line_fit<span class="op">=</span>np.polyfit(topic_stats[<span class="st">'avg_rating'</span>].values,topic_stats[<span class="st">'pol_points'</span>].values,<span class="dv">1</span>)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>positive_line_er_y<span class="op">=</span>np.poly1d(line_fit)(line_er_x)<span class="op">+</span>pol_line_ME</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>negative_line_er_y<span class="op">=</span>np.poly1d(line_fit)(line_er_x)<span class="op">-</span>pol_line_ME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="the-final-plot" class="level5">
 <h5 class="anchored" data-anchor-id="the-final-plot">The final plot:</h5>
-<div class="cell" data-execution_count="66">
+<div class="cell" data-execution_count="67">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>pol_pos_line<span class="op">=</span>px.line(x<span class="op">=</span>line_er_x,y<span class="op">=</span>positive_line_er_y).data[<span class="dv">0</span>]</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>pol_pos_line.update(line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'grey'</span>,dash<span class="op">=</span><span class="st">'dash'</span>))</span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>pol_neg_line<span class="op">=</span>px.line(x<span class="op">=</span>line_er_x,y<span class="op">=</span>negative_line_er_y).data[<span class="dv">0</span>]</span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>pol_neg_line.update(line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'grey'</span>,dash<span class="op">=</span><span class="st">'dash'</span>))</span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter.add_trace(pol_pos_line)</span>
-<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter.add_trace(pol_neg_line)</span>
-<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>default_plotly_margins(fig_topics_scatter)</span>
-<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>pol_pos_line<span class="op">=</span>px.line(x<span class="op">=</span>line_er_x,y<span class="op">=</span>positive_line_er_y).data[<span class="dv">0</span>]</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>pol_pos_line.update(line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'grey'</span>,dash<span class="op">=</span><span class="st">'dash'</span>))</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>pol_neg_line<span class="op">=</span>px.line(x<span class="op">=</span>line_er_x,y<span class="op">=</span>negative_line_er_y).data[<span class="dv">0</span>]</span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>pol_neg_line.update(line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'grey'</span>,dash<span class="op">=</span><span class="st">'dash'</span>))</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter.add_trace(pol_pos_line)</span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter.add_trace(pol_neg_line)</span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>default_plotly_margins(fig_topics_scatter)</span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a>fig_topics_scatter.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-topics-scatter" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 
-<div>                            <div id="785ae0da-2ac7-4bca-ad0d-5b6d1a2a3261" class="plotly-graph-div" style="height:460.0754716981132px; width:736.1207547169811px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("785ae0da-2ac7-4bca-ad0d-5b6d1a2a3261")) {                    Plotly.newPlot(                        "785ae0da-2ac7-4bca-ad0d-5b6d1a2a3261",                        [{"hovertemplate":"<b>%{hovertext}</b><br><br>Average Rating=%{x}<br>Review Polarization Points=%{y}<extra></extra>","hovertext":["arts","arts-performing-arts","music","arts-design","education","society-culture","arts-visual-arts","leisure","leisure-hobbies","arts-books","technology","society-culture-personal-journals","society-culture-relationships","fiction","fiction-science-fiction","arts-food","education-language-learning","fiction-drama","true-crime","health-fitness","health-fitness-nutrition","history","comedy","arts-fashion-beauty","tv-film","society-culture-places-travel","comedy-comedy-interviews","kids-family","health-fitness-mental-health","religion-spirituality","business","news","news-business-news","education-courses","society-culture-philosophy","leisure-video-games","tv-film-film-reviews","leisure-games","spirituality","tv-film-film-history","business-careers","business-entrepreneurship","science","science-earth-sciences","comedy-improv","tv-film-tv-reviews","health-fitness-sexuality","news-politics","leisure-home-garden","leisure-animation-manga","fiction-comedy-fiction","christianity","government","sports","hinduism","music-music-commentary","business-marketing","music-music-interviews","education-how-to","science-social-sciences","society-culture-documentary","business-management","news-tech-news","education-self-improvement","sports-wilderness","health-fitness-alternative-health","health-fitness-medicine","leisure-crafts","business-investing","science-natural-sciences","science-nature","tv-film-after-shows","sports-soccer","leisure-automotive","kids-family-pets-animals","judaism","religion","sports-football","kids-family-parenting","health-fitness-fitness","news-entertainment-news","news-daily-news","kids-family-stories-for-kids","tv-film-film-interviews","music-music-history","science-life-sciences","comedy-stand-up","leisure-aviation","sports-golf","business-non-profit","islam","news-sports-news","sports-basketball","sports-baseball","sports-fantasy-sports","kids-family-education-for-kids","science-astronomy","science-physics","science-chemistry","sports-running","sports-wrestling","buddhism","sports-swimming","sports-tennis","science-mathematics","sports-hockey","sports-volleyball","sports-rugby","sports-cricket","news-news-commentary"],"legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":[4.727781521962083,4.703887646362321,4.766756483664533,4.8113667691655175,4.813993535619458,4.546983981859082,4.822154105060704,4.759590405264981,4.7891896414675985,4.681932512331363,4.529647904992891,4.735194932865444,4.4666236142503495,4.603626711205226,4.565837410221714,4.781106547475235,4.668225172994203,4.537887212073074,4.1638572746847125,4.788055762721588,4.880982481488171,4.522414026079319,4.623423818861729,4.6497156239545,4.518006061854456,4.759043974294173,4.675124707319556,4.745690063016862,4.835223950415156,4.832466088806749,4.839409561074062,4.301109929549382,4.614394580863675,4.764462809917355,4.769980621293088,4.704959656942956,4.752083702784182,4.776599837558244,4.85644354351764,4.671958529078244,4.89006138610189,4.9083771590937415,4.524381533666645,4.721689059500959,4.744599079951086,4.552321552321552,4.476195393989466,4.205813564984965,4.823933975240715,4.810429114611624,4.834667790420003,4.823247356412365,4.43010266675276,4.612250937629831,4.86036036036036,4.823374050841862,4.937095153971388,4.799818080044781,4.800638451240861,4.420597355965399,4.313421405322612,4.867669814844459,4.409090909090909,4.876771096853628,4.7996786779894425,4.790271560728141,4.803187120092,4.863190184049079,4.681912782537148,4.4763779527559056,4.800247754722824,4.391995291347851,4.711517952364024,4.702031877357343,4.855482566953007,4.778606965174129,4.818252730109204,4.6511601963409195,4.796848574846347,4.861337554412347,4.654456654456655,3.9652029274783764,4.735020163448842,4.773748128431209,4.752938465084121,4.619645494830133,4.816260439747742,4.82992125984252,4.779472044597475,4.901167315175098,4.824821852731591,4.479803462263612,4.61247574161353,4.648123393316196,4.628656420426376,4.713295579410024,4.522222222222222,4.635775862068965,4.882716049382716,4.891992853662498,4.578386605783866,4.773038842345773,4.892307692307693,4.567986230636833,4.753086419753086,4.546756756756757,4.864077669902913,4.9880239520958085,4.7976190476190474,4.492889258950874],"xaxis":"x","y":[1.9067014387435168,1.894454677016182,1.918491074435837,1.9224896617537908,1.9407206386844038,1.8777479552994745,1.9257723284048565,1.9186872185659853,1.929423084968414,1.8861594747329566,1.8603328594128963,1.9152325132838068,1.887073512000861,1.8524859077216738,1.8139897991048195,1.9267939115728436,1.8761922573405647,1.8141382049245434,1.7755828975699786,1.9346681200160634,1.9545782914935885,1.8482028241335045,1.9088123631886174,1.899297423887588,1.8712650442868493,1.9197776012708498,1.923063218975873,1.9152867929527089,1.9459322496394185,1.952984662388412,1.9514710992426731,1.83790819265364,1.8775613886536833,1.9147065056155965,1.9372247342768218,1.903910173221238,1.9235680085121476,1.9210020091480358,1.9555550763391703,1.8783411631297586,1.9583835611357356,1.9734802223274595,1.8660476592429063,1.9251439539347408,1.9459616840388982,1.875061875061875,1.8645048022307136,1.8248830604744404,1.9334250343878954,1.9255839217816404,1.935243714004776,1.953683649714504,1.8560082649964487,1.8986790659556425,1.97196261682243,1.944206008583691,1.9724271710138903,1.9377973691575707,1.9349191638348264,1.8451118002284967,1.799604314251069,1.95080305213169,1.8328909533289095,1.9642077317455584,1.9348175350011476,1.932676812891674,1.9295219319862,1.9383945239576852,1.9151541551715794,1.8498031496062992,1.9327965314338804,1.8610211889346675,1.9177035193743335,1.9020562112179098,1.9494694290045478,1.954868514570007,1.937857514300572,1.8993752788933511,1.9453450480551087,1.9553620894341115,1.91937181592354,1.7389886892880906,1.8906891260126333,1.940109798702379,1.9138050241991242,1.9194977843426884,1.9628430202829386,1.9181102362204725,1.9355632070831283,1.9735408560311285,1.950712589073634,1.8656801691138662,1.9001386193512615,1.8947043701799486,1.8907017622932347,1.8803144281971094,1.8797979797979798,1.8771551724137931,1.950310559006211,1.9546857235666721,1.908675799086758,1.8994668697638994,1.9538461538461538,1.8158347676419966,1.9056603773584906,1.8786486486486487,1.9029126213592233,1.9880239520958083,1.8928571428571428,1.8904912572855954],"yaxis":"y","type":"scatter"},{"hovertemplate":"<b>OLS trendline</b><br>pol_points = 0.234502 * avg_rating + 0.806637<br>R<sup>2</sup>=0.834458<br><br>Average Rating=%{x}<br>Review Polarization Points=%{y} <b>(trend)</b><extra></extra>","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"lines","name":"","showlegend":false,"x":[3.9652029274783764,4.1638572746847125,4.205813564984965,4.301109929549382,4.313421405322612,4.391995291347851,4.409090909090909,4.420597355965399,4.43010266675276,4.4666236142503495,4.476195393989466,4.4763779527559056,4.479803462263612,4.492889258950874,4.518006061854456,4.522222222222222,4.522414026079319,4.524381533666645,4.529647904992891,4.537887212073074,4.546756756756757,4.546983981859082,4.552321552321552,4.565837410221714,4.567986230636833,4.578386605783866,4.603626711205226,4.612250937629831,4.61247574161353,4.614394580863675,4.619645494830133,4.623423818861729,4.628656420426376,4.635775862068965,4.648123393316196,4.6497156239545,4.6511601963409195,4.654456654456655,4.668225172994203,4.671958529078244,4.675124707319556,4.681912782537148,4.681932512331363,4.702031877357343,4.703887646362321,4.704959656942956,4.711517952364024,4.713295579410024,4.721689059500959,4.727781521962083,4.735020163448842,4.735194932865444,4.744599079951086,4.745690063016862,4.752083702784182,4.752938465084121,4.753086419753086,4.759043974294173,4.759590405264981,4.764462809917355,4.766756483664533,4.769980621293088,4.773038842345773,4.773748128431209,4.776599837558244,4.778606965174129,4.779472044597475,4.781106547475235,4.788055762721588,4.7891896414675985,4.790271560728141,4.796848574846347,4.7976190476190474,4.7996786779894425,4.799818080044781,4.800247754722824,4.800638451240861,4.803187120092,4.810429114611624,4.8113667691655175,4.813993535619458,4.816260439747742,4.818252730109204,4.822154105060704,4.823247356412365,4.823374050841862,4.823933975240715,4.824821852731591,4.82992125984252,4.832466088806749,4.834667790420003,4.835223950415156,4.839409561074062,4.855482566953007,4.85644354351764,4.86036036036036,4.861337554412347,4.863190184049079,4.864077669902913,4.867669814844459,4.876771096853628,4.880982481488171,4.882716049382716,4.89006138610189,4.891992853662498,4.892307692307693,4.901167315175098,4.9083771590937415,4.937095153971388,4.9880239520958085],"xaxis":"x","y":[1.7364852887717672,1.7830701286352357,1.7929089622293093,1.8152561494176824,1.8181432149938677,1.8365689476768492,1.8405779040683257,1.8432761887652567,1.8455052030662715,1.854069437953466,1.8563140393559814,1.856356849750115,1.85716013854853,1.8602287839204275,1.8661187241991084,1.8671074221980857,1.867152400584382,1.8676137850301529,1.8688487595894556,1.8707808935010162,1.872860819385155,1.8729141041239674,1.8741657750224445,1.8773352706048514,1.8778391732696629,1.8802780819447462,1.8861969369092937,1.8882193351733458,1.8882720521550205,1.8887220237788425,1.8899533735565055,1.8908393980630893,1.8920664535460747,1.8937359767833026,1.896631497439913,1.8970048786941076,1.8973436337943048,1.8981166597844115,1.9013454047892346,1.9022208842226034,1.902963359322821,1.9045551764737652,1.904559803149783,1.909273144258398,1.9097083257841798,1.909959714399295,1.9114976477305525,1.9119145048114041,1.9138827926008841,1.9153114871757424,1.9170089630137084,1.9170499467898,1.919255238001384,1.9195110757020317,1.9210103969547196,1.9212108404155548,1.9212455360799474,1.922642594479007,1.9227707336293935,1.923913322219439,1.9244511932789647,1.925207259970866,1.9259244188954496,1.9260907478943974,1.9267594793613312,1.9272301547826673,1.927433017629479,1.9278163118079732,1.9294459166164293,1.9297118134394804,1.9299655256597585,1.9315078485627564,1.931688525961666,1.9321715133834472,1.9322042034429194,1.9323049630102358,1.9323965821214402,1.9329942500404416,1.934692512171289,1.934912394030683,1.935528375993003,1.9360599695236105,1.9365271655792489,1.9374420457714967,1.9376984153896997,1.937728125485616,1.937859428871739,1.9380676379107684,1.9392634590292182,1.9398602264870952,1.9403765298981352,1.9405069505240973,1.941488484555534,1.9452576364292535,1.9454829873465909,1.9464014886930685,1.946630642643473,1.947065087981152,1.9472732051805153,1.9481155703198718,1.9502498390681366,1.9512374171481666,1.9516439422702976,1.9533664383526537,1.9538193713404173,1.953893201629437,1.9559708008279086,1.9576615235788273,1.9643959505439996,1.9763388550836156],"yaxis":"y","type":"scatter"},{"hovertemplate":"x=%{x}<br>y=%{y}<extra></extra>","legendgroup":"","line":{"color":"grey","dash":"dash"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":[3.9652029274783764,3.975655423160413,3.9861079188424497,3.9965604145244864,4.007012910206523,4.01746540588856,4.027917901570596,4.038370397252633,4.04882289293467,4.0592753886167054,4.069727884298742,4.080180379980779,4.090632875662815,4.101085371344852,4.111537867026889,4.121990362708925,4.132442858390962,4.142895354072999,4.153347849755035,4.163800345437072,4.174252841119109,4.184705336801145,4.195157832483182,4.205610328165219,4.216062823847255,4.226515319529291,4.236967815211328,4.247420310893364,4.257872806575401,4.268325302257438,4.278777797939474,4.289230293621511,4.299682789303548,4.310135284985584,4.320587780667621,4.331040276349658,4.341492772031694,4.351945267713731,4.362397763395768,4.372850259077804,4.383302754759841,4.3937552504418775,4.404207746123913,4.41466024180595,4.425112737487987,4.435565233170023,4.44601772885206,4.456470224534097,4.466922720216133,4.47737521589817,4.4878277115802065,4.498280207262243,4.50873270294428,4.5191851986263165,4.529637694308353,4.54009018999039,4.5505426856724265,4.560995181354462,4.571447677036499,4.581900172718536,4.592352668400572,4.602805164082609,4.6132576597646455,4.623710155446682,4.634162651128719,4.6446151468107555,4.655067642492792,4.665520138174829,4.6759726338568655,4.686425129538902,4.696877625220939,4.707330120902975,4.717782616585012,4.728235112267049,4.738687607949085,4.749140103631122,4.759592599313158,4.7700450949951945,4.780497590677231,4.790950086359268,4.801402582041304,4.811855077723341,4.822307573405378,4.832760069087414,4.843212564769451,4.853665060451488,4.864117556133524,4.874570051815561,4.885022547497598,4.895475043179634,4.90592753886167,4.916380034543707,4.926832530225743,4.93728502590778,4.947737521589817,4.958190017271853,4.96864251295389,4.979095008635927,4.989547504317963,5.0],"xaxis":"x","y":[1.7666466008223667,1.7690977318666599,1.771548862910953,1.7739999939552464,1.7764511249995398,1.7789022560438332,1.7813533870881266,1.7838045181324198,1.786255649176713,1.7887067802210064,1.7911579112652996,1.793609042309593,1.7960601733538861,1.7985113043981795,1.800962435442473,1.8034135664867663,1.8058646975310595,1.8083158285753527,1.810766959619646,1.8132180906639395,1.8156692217082329,1.8181203527525263,1.8205714837968194,1.8230226148411126,1.825473745885406,1.8279248769296992,1.8303760079739924,1.8328271390182858,1.8352782700625792,1.8377294011068726,1.840180532151166,1.8426316631954593,1.8450827942397523,1.8475339252840457,1.849985056328339,1.8524361873726325,1.854887318416926,1.8573384494612193,1.8597895805055122,1.8622407115498056,1.864691842594099,1.8671429736383924,1.8695941046826854,1.8720452357269788,1.8744963667712722,1.8769474978155656,1.879398628859859,1.881849759904152,1.8843008909484453,1.8867520219927387,1.8892031530370321,1.8916542840813255,1.8941054151256185,1.8965565461699119,1.8990076772142053,1.9014588082584987,1.903909939302792,1.906361070347085,1.9088122013913784,1.9112633324356718,1.9137144634799652,1.9161655945242586,1.9186167255685516,1.921067856612845,1.9235189876571384,1.9259701187014318,1.9284212497457252,1.930872380790018,1.9333235118343115,1.935774642878605,1.9382257739228983,1.9406769049671917,1.943128036011485,1.945579167055778,1.9480302981000714,1.9504814291443648,1.9529325601886578,1.9553836912329512,1.9578348222772446,1.960285953321538,1.9627370843658314,1.9651882154101248,1.9676393464544177,1.9700904774987111,1.9725416085430045,1.974992739587298,1.9774438706315913,1.9798950016758847,1.9823461327201777,1.984797263764471,1.9872483948087645,1.9896995258530574,1.9921506568973508,1.9946017879416442,1.9970529189859376,1.999504050030231,2.0019551810745244,2.0044063121188174,2.0068574431631108,2.009308574207404],"yaxis":"y","type":"scatter"},{"hovertemplate":"x=%{x}<br>y=%{y}<extra></extra>","legendgroup":"","line":{"color":"grey","dash":"dash"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":[3.9652029274783764,3.975655423160413,3.9861079188424497,3.9965604145244864,4.007012910206523,4.01746540588856,4.027917901570596,4.038370397252633,4.04882289293467,4.0592753886167054,4.069727884298742,4.080180379980779,4.090632875662815,4.101085371344852,4.111537867026889,4.121990362708925,4.132442858390962,4.142895354072999,4.153347849755035,4.163800345437072,4.174252841119109,4.184705336801145,4.195157832483182,4.205610328165219,4.216062823847255,4.226515319529291,4.236967815211328,4.247420310893364,4.257872806575401,4.268325302257438,4.278777797939474,4.289230293621511,4.299682789303548,4.310135284985584,4.320587780667621,4.331040276349658,4.341492772031694,4.351945267713731,4.362397763395768,4.372850259077804,4.383302754759841,4.3937552504418775,4.404207746123913,4.41466024180595,4.425112737487987,4.435565233170023,4.44601772885206,4.456470224534097,4.466922720216133,4.47737521589817,4.4878277115802065,4.498280207262243,4.50873270294428,4.5191851986263165,4.529637694308353,4.54009018999039,4.5505426856724265,4.560995181354462,4.571447677036499,4.581900172718536,4.592352668400572,4.602805164082609,4.6132576597646455,4.623710155446682,4.634162651128719,4.6446151468107555,4.655067642492792,4.665520138174829,4.6759726338568655,4.686425129538902,4.696877625220939,4.707330120902975,4.717782616585012,4.728235112267049,4.738687607949085,4.749140103631122,4.759592599313158,4.7700450949951945,4.780497590677231,4.790950086359268,4.801402582041304,4.811855077723341,4.822307573405378,4.832760069087414,4.843212564769451,4.853665060451488,4.864117556133524,4.874570051815561,4.885022547497598,4.895475043179634,4.90592753886167,4.916380034543707,4.926832530225743,4.93728502590778,4.947737521589817,4.958190017271853,4.96864251295389,4.979095008635927,4.989547504317963,5.0],"xaxis":"x","y":[1.7063239767211646,1.7087751077654578,1.711226238809751,1.7136773698540444,1.7161285008983378,1.7185796319426312,1.7210307629869246,1.7234818940312178,1.725933025075511,1.7283841561198043,1.7308352871640975,1.733286418208391,1.735737549252684,1.7381886802969775,1.7406398113412709,1.7430909423855643,1.7455420734298575,1.7479932044741506,1.750444335518444,1.7528954665627374,1.7553465976070308,1.7577977286513242,1.7602488596956174,1.7626999907399106,1.765151121784204,1.7676022528284971,1.7700533838727903,1.7725045149170837,1.7749556459613771,1.7774067770056705,1.779857908049964,1.7823090390942573,1.7847601701385503,1.7872113011828437,1.789662432227137,1.7921135632714305,1.7945646943157239,1.7970158253600172,1.7994669564043102,1.8019180874486036,1.804369218492897,1.8068203495371904,1.8092714805814833,1.8117226116257767,1.8141737426700701,1.8166248737143635,1.819076004758657,1.82152713580295,1.8239782668472433,1.8264293978915367,1.82888052893583,1.8313316599801235,1.8337827910244164,1.8362339220687098,1.8386850531130032,1.8411361841572966,1.84358731520159,1.846038446245883,1.8484895772901764,1.8509407083344698,1.8533918393787632,1.8558429704230566,1.8582941014673495,1.860745232511643,1.8631963635559363,1.8656474946002297,1.8680986256445231,1.870549756688816,1.8730008877331095,1.8754520187774029,1.8779031498216963,1.8803542808659897,1.882805411910283,1.885256542954576,1.8877076739988694,1.8901588050431628,1.8926099360874558,1.8950610671317492,1.8975121981760426,1.899963329220336,1.9024144602646293,1.9048655913089227,1.9073167223532157,1.909767853397509,1.9122189844418025,1.914670115486096,1.9171212465303893,1.9195723775746827,1.9220235086189756,1.924474639663269,1.9269257707075624,1.9293769017518554,1.9318280327961488,1.9342791638404422,1.9367302948847356,1.939181425929029,1.9416325569733224,1.9440836880176153,1.9465348190619087,1.9489859501062021],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Average Rating"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Review Polarization Points"}},"legend":{"tracegroupgap":0},"margin":{"t":25,"l":65,"r":10,"b":30},"height":460.0754716981132,"width":736.1207547169811},                        {"responsive": true}                    ).then(function(){
+<div>                            <div id="3e1593d2-e867-464d-8fea-220132304fd5" class="plotly-graph-div" style="height:511.1949685534591px; width:817.9119496855345px;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("3e1593d2-e867-464d-8fea-220132304fd5")) {                    Plotly.newPlot(                        "3e1593d2-e867-464d-8fea-220132304fd5",                        [{"hovertemplate":"<b>%{hovertext}</b><br><br>Average Rating=%{x}<br>Review Polarization Points=%{y}<extra></extra>","hovertext":["arts","arts-performing-arts","music","arts-design","education","society-culture","arts-visual-arts","leisure","leisure-hobbies","arts-books","technology","society-culture-personal-journals","society-culture-relationships","fiction","fiction-science-fiction","arts-food","education-language-learning","fiction-drama","true-crime","health-fitness","health-fitness-nutrition","history","comedy","arts-fashion-beauty","tv-film","society-culture-places-travel","comedy-comedy-interviews","kids-family","health-fitness-mental-health","religion-spirituality","business","news","news-business-news","education-courses","society-culture-philosophy","leisure-video-games","tv-film-film-reviews","leisure-games","spirituality","tv-film-film-history","business-careers","business-entrepreneurship","science","science-earth-sciences","comedy-improv","tv-film-tv-reviews","health-fitness-sexuality","news-politics","leisure-home-garden","leisure-animation-manga","fiction-comedy-fiction","christianity","government","sports","music-music-commentary","business-marketing","music-music-interviews","education-how-to","science-social-sciences","society-culture-documentary","business-management","news-tech-news","education-self-improvement","sports-wilderness","health-fitness-alternative-health","health-fitness-medicine","business-investing","science-natural-sciences","science-nature","tv-film-after-shows","sports-soccer","leisure-automotive","kids-family-pets-animals","judaism","religion","sports-football","kids-family-parenting","health-fitness-fitness","news-entertainment-news","news-daily-news","kids-family-stories-for-kids","tv-film-film-interviews","music-music-history","science-life-sciences","comedy-stand-up","leisure-aviation","sports-golf","business-non-profit","islam","news-sports-news","sports-basketball","sports-baseball","sports-fantasy-sports","kids-family-education-for-kids","science-astronomy","science-physics","sports-running","sports-wrestling","buddhism","sports-swimming","sports-tennis","sports-hockey","sports-volleyball","sports-rugby","sports-cricket","news-news-commentary"],"legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":[4.727781521962083,4.703887646362321,4.766756483664533,4.8113667691655175,4.813993535619458,4.546983981859082,4.822154105060704,4.759590405264981,4.7891896414675985,4.681932512331363,4.529647904992891,4.735194932865444,4.4666236142503495,4.603626711205226,4.565837410221714,4.781106547475235,4.668225172994203,4.537887212073074,4.1638572746847125,4.788055762721588,4.880982481488171,4.522414026079319,4.623423818861729,4.6497156239545,4.518006061854456,4.759043974294173,4.675124707319556,4.745690063016862,4.835223950415156,4.832466088806749,4.839409561074062,4.301109929549382,4.614394580863675,4.764462809917355,4.769980621293088,4.704959656942956,4.752083702784182,4.776599837558244,4.85644354351764,4.671958529078244,4.89006138610189,4.9083771590937415,4.524381533666645,4.721689059500959,4.744599079951086,4.552321552321552,4.476195393989466,4.205813564984965,4.823933975240715,4.810429114611624,4.834667790420003,4.823247356412365,4.43010266675276,4.612250937629831,4.823374050841862,4.937095153971388,4.799818080044781,4.800638451240861,4.420597355965399,4.313421405322612,4.867669814844459,4.409090909090909,4.876771096853628,4.7996786779894425,4.790271560728141,4.803187120092,4.681912782537148,4.4763779527559056,4.800247754722824,4.391995291347851,4.711517952364024,4.702031877357343,4.855482566953007,4.778606965174129,4.818252730109204,4.6511601963409195,4.796848574846347,4.861337554412347,4.654456654456655,3.9652029274783764,4.735020163448842,4.773748128431209,4.752938465084121,4.619645494830133,4.816260439747742,4.82992125984252,4.779472044597475,4.901167315175098,4.824821852731591,4.479803462263612,4.61247574161353,4.648123393316196,4.628656420426376,4.713295579410024,4.522222222222222,4.635775862068965,4.891992853662498,4.578386605783866,4.773038842345773,4.892307692307693,4.567986230636833,4.546756756756757,4.864077669902913,4.9880239520958085,4.7976190476190474,4.492889258950874],"xaxis":"x","y":[1.9067014387435168,1.894454677016182,1.918491074435837,1.9224896617537908,1.9407206386844038,1.8777479552994745,1.9257723284048565,1.9186872185659853,1.929423084968414,1.8861594747329566,1.8603328594128963,1.9152325132838068,1.887073512000861,1.8524859077216738,1.8139897991048195,1.9267939115728436,1.8761922573405647,1.8141382049245434,1.7755828975699786,1.9346681200160634,1.9529980133646379,1.8482028241335045,1.9088123631886174,1.899297423887588,1.8712650442868493,1.9197776012708498,1.923063218975873,1.9080767556724638,1.9459322496394185,1.952984662388412,1.9514710992426731,1.83790819265364,1.8775613886536833,1.9147065056155965,1.9372247342768218,1.903910173221238,1.9235680085121476,1.9210020091480358,1.9555550763391703,1.8783411631297586,1.9583835611357356,1.9734802223274595,1.8660476592429063,1.9251439539347408,1.9459616840388982,1.875061875061875,1.8645048022307136,1.8248830604744404,1.9334250343878954,1.9255839217816404,1.935243714004776,1.953683649714504,1.8560082649964487,1.8986790659556425,1.944206008583691,1.9724271710138903,1.9377973691575707,1.9349191638348264,1.8451118002284967,1.799604314251069,1.95080305213169,1.8328909533289095,1.9642077317455584,1.9348175350011476,1.932676812891674,1.9295219319862,1.9151541551715794,1.8498031496062992,1.9327965314338804,1.8610211889346675,1.9177035193743335,1.9020562112179098,1.9494694290045478,1.954868514570007,1.937857514300572,1.8993752788933511,1.9453450480551087,1.9553620894341115,1.91937181592354,1.7389886892880906,1.8906891260126333,1.940109798702379,1.9138050241991242,1.9194977843426884,1.9628430202829386,1.9181102362204725,1.9355632070831283,1.9735408560311285,1.950712589073634,1.8656801691138662,1.9001386193512615,1.8947043701799486,1.8907017622932347,1.8803144281971094,1.8797979797979798,1.8771551724137931,1.9546857235666721,1.908675799086758,1.8994668697638994,1.9538461538461538,1.8158347676419966,1.8786486486486487,1.9029126213592233,1.9880239520958083,1.8928571428571428,1.8904912572855954],"yaxis":"y","type":"scatter"},{"hovertemplate":"<b>OLS trendline</b><br>pol_points = 0.233787 * avg_rating + 0.809908<br>R<sup>2</sup>=0.832895<br><br>Average Rating=%{x}<br>Review Polarization Points=%{y} <b>(trend)</b><extra></extra>","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"lines","name":"","showlegend":false,"x":[3.9652029274783764,4.1638572746847125,4.205813564984965,4.301109929549382,4.313421405322612,4.391995291347851,4.409090909090909,4.420597355965399,4.43010266675276,4.4666236142503495,4.476195393989466,4.4763779527559056,4.479803462263612,4.492889258950874,4.518006061854456,4.522222222222222,4.522414026079319,4.524381533666645,4.529647904992891,4.537887212073074,4.546756756756757,4.546983981859082,4.552321552321552,4.565837410221714,4.567986230636833,4.578386605783866,4.603626711205226,4.612250937629831,4.61247574161353,4.614394580863675,4.619645494830133,4.623423818861729,4.628656420426376,4.635775862068965,4.648123393316196,4.6497156239545,4.6511601963409195,4.654456654456655,4.668225172994203,4.671958529078244,4.675124707319556,4.681912782537148,4.681932512331363,4.702031877357343,4.703887646362321,4.704959656942956,4.711517952364024,4.713295579410024,4.721689059500959,4.727781521962083,4.735020163448842,4.735194932865444,4.744599079951086,4.745690063016862,4.752083702784182,4.752938465084121,4.759043974294173,4.759590405264981,4.764462809917355,4.766756483664533,4.769980621293088,4.773038842345773,4.773748128431209,4.776599837558244,4.778606965174129,4.779472044597475,4.781106547475235,4.788055762721588,4.7891896414675985,4.790271560728141,4.796848574846347,4.7976190476190474,4.7996786779894425,4.799818080044781,4.800247754722824,4.800638451240861,4.803187120092,4.810429114611624,4.8113667691655175,4.813993535619458,4.816260439747742,4.818252730109204,4.822154105060704,4.823247356412365,4.823374050841862,4.823933975240715,4.824821852731591,4.82992125984252,4.832466088806749,4.834667790420003,4.835223950415156,4.839409561074062,4.855482566953007,4.85644354351764,4.861337554412347,4.864077669902913,4.867669814844459,4.876771096853628,4.880982481488171,4.89006138610189,4.891992853662498,4.892307692307693,4.901167315175098,4.9083771590937415,4.937095153971388,4.9880239520958085],"xaxis":"x","y":[1.7369210700751578,1.7833638662914266,1.7931726999152953,1.8154517474259926,1.8183300099382331,1.836699560003001,1.840696292529611,1.8433863497817193,1.845608567508529,1.8541466888540128,1.8563844461550854,1.8564271260143812,1.857227965473676,1.8602872541196114,1.8661592351522927,1.8671449184737448,1.8671897597146936,1.8676497373352048,1.8688809462855431,1.8708071888524411,1.8728807727536658,1.8729338950199084,1.8741817493999637,1.877341580750109,1.8778439469457056,1.8802754190494833,1.8861762266031374,1.888192458293979,1.8882450145342544,1.8886936141320962,1.8899212093532571,1.8908045322480551,1.8920278462684395,1.8936922788974266,1.8965789707093783,1.8969512134722677,1.897288935661113,1.8980596045876053,1.9012785047004483,1.9021513146754239,1.902891525865934,1.9044784893452877,1.9044831019139277,1.9091820713908374,1.9096159259877024,1.9098665480840131,1.9113997920429302,1.9118153780686424,1.913777664275265,1.915202002561924,1.9168943025602874,1.916935161371153,1.9191337283435264,1.9193887859594898,1.9208835355734284,1.9210833678543107,1.9225107563007586,1.9226385047370773,1.9237776094158106,1.9243138404317677,1.9250676017713102,1.9257825739787224,1.9259483958174497,1.926615088229257,1.927084328495858,1.927286572785673,1.927668698246979,1.9292933341640282,1.9295584202307339,1.9298113588472126,1.9313489789934564,1.9315291054818817,1.9320106202079286,1.932043210590869,1.9321436629282696,1.9322350026800783,1.9328308482265806,1.9345239321203094,1.934743143529373,1.9353572472771323,1.9358872199052286,1.9363529914152018,1.93726508201067,1.9375206699222982,1.9375502894280054,1.9376811924518667,1.9378887666326166,1.9390809415263814,1.9396758893573907,1.9401906184876179,1.9403206414429763,1.9412991826408201,1.9450568418469556,1.9452815056380457,1.9464256615745226,1.9470662648491401,1.9479060615001855,1.9500338225665952,1.9510183893838882,1.95314091890701,1.9535924708391832,1.953666076009397,1.9557373403193417,1.9574229078217578,1.9641368005837272,1.9760432895485784],"yaxis":"y","type":"scatter"},{"hovertemplate":"x=%{x}<br>y=%{y}<extra></extra>","legendgroup":"","line":{"color":"grey","dash":"dash"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":[3.9652029274783764,3.975655423160413,3.9861079188424497,3.9965604145244864,4.007012910206523,4.01746540588856,4.027917901570596,4.038370397252633,4.04882289293467,4.0592753886167054,4.069727884298742,4.080180379980779,4.090632875662815,4.101085371344852,4.111537867026889,4.121990362708925,4.132442858390962,4.142895354072999,4.153347849755035,4.163800345437072,4.174252841119109,4.184705336801145,4.195157832483182,4.205610328165219,4.216062823847255,4.226515319529291,4.236967815211328,4.247420310893364,4.257872806575401,4.268325302257438,4.278777797939474,4.289230293621511,4.299682789303548,4.310135284985584,4.320587780667621,4.331040276349658,4.341492772031694,4.351945267713731,4.362397763395768,4.372850259077804,4.383302754759841,4.3937552504418775,4.404207746123913,4.41466024180595,4.425112737487987,4.435565233170023,4.44601772885206,4.456470224534097,4.466922720216133,4.47737521589817,4.4878277115802065,4.498280207262243,4.50873270294428,4.5191851986263165,4.529637694308353,4.54009018999039,4.5505426856724265,4.560995181354462,4.571447677036499,4.581900172718536,4.592352668400572,4.602805164082609,4.6132576597646455,4.623710155446682,4.634162651128719,4.6446151468107555,4.655067642492792,4.665520138174829,4.6759726338568655,4.686425129538902,4.696877625220939,4.707330120902975,4.717782616585012,4.728235112267049,4.738687607949085,4.749140103631122,4.759592599313158,4.7700450949951945,4.780497590677231,4.790950086359268,4.801402582041304,4.811855077723341,4.822307573405378,4.832760069087414,4.843212564769451,4.853665060451488,4.864117556133524,4.874570051815561,4.885022547497598,4.895475043179634,4.90592753886167,4.916380034543707,4.926832530225743,4.93728502590778,4.947737521589817,4.958190017271853,4.96864251295389,4.979095008635927,4.989547504317963,5.0],"xaxis":"x","y":[1.7672861008864253,1.769729758091712,1.7721734152969986,1.774617072502285,1.7770607297075713,1.779504386912858,1.7819480441181446,1.7843917013234312,1.7868353585287178,1.789279015734004,1.7917226729392906,1.7941663301445772,1.7966099873498638,1.7990536445551502,1.8014973017604365,1.8039409589657232,1.8063846161710098,1.8088282733762964,1.811271930581583,1.8137155877868694,1.816159244992156,1.8186029021974424,1.821046559402729,1.8234902166080156,1.8259338738133022,1.8283775310185884,1.830821188223875,1.8332648454291616,1.8357085026344482,1.8381521598397346,1.840595817045021,1.8430394742503076,1.8454831314555942,1.8479267886608808,1.8503704458661674,1.852814103071454,1.8552577602767406,1.8577014174820268,1.8601450746873134,1.8625887318926,1.8650323890978866,1.8674760463031732,1.8699197035084594,1.872363360713746,1.8748070179190326,1.8772506751243192,1.8796943323296058,1.882137989534892,1.8845816467401786,1.8870253039454652,1.8894689611507518,1.8919126183560384,1.894356275561325,1.8967999327666112,1.8992435899718978,1.9016872471771844,1.904130904382471,1.9065745615877572,1.9090182187930438,1.9114618759983304,1.913905533203617,1.9163491904089036,1.9187928476141902,1.9212365048194764,1.923680162024763,1.9261238192300496,1.9285674764353362,1.9310111336406228,1.9334547908459094,1.9358984480511956,1.9383421052564822,1.9407857624617688,1.9432294196670554,1.945673076872342,1.9481167340776286,1.9505603912829153,1.9530040484882014,1.955447705693488,1.9578913628987746,1.9603350201040608,1.9627786773093474,1.965222334514634,1.9676659917199206,1.9701096489252072,1.9725533061304938,1.9749969633357805,1.9774406205410666,1.9798842777463532,1.9823279349516398,1.9847715921569264,1.9872152493622126,1.9896589065674992,1.9921025637727858,1.9945462209780724,1.996989878183359,1.9994335353886457,2.001877192593932,2.0043208497992184,2.006764507004505,2.0092081642097916],"yaxis":"y","type":"scatter"},{"hovertemplate":"x=%{x}<br>y=%{y}<extra></extra>","legendgroup":"","line":{"color":"grey","dash":"dash"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":[3.9652029274783764,3.975655423160413,3.9861079188424497,3.9965604145244864,4.007012910206523,4.01746540588856,4.027917901570596,4.038370397252633,4.04882289293467,4.0592753886167054,4.069727884298742,4.080180379980779,4.090632875662815,4.101085371344852,4.111537867026889,4.121990362708925,4.132442858390962,4.142895354072999,4.153347849755035,4.163800345437072,4.174252841119109,4.184705336801145,4.195157832483182,4.205610328165219,4.216062823847255,4.226515319529291,4.236967815211328,4.247420310893364,4.257872806575401,4.268325302257438,4.278777797939474,4.289230293621511,4.299682789303548,4.310135284985584,4.320587780667621,4.331040276349658,4.341492772031694,4.351945267713731,4.362397763395768,4.372850259077804,4.383302754759841,4.3937552504418775,4.404207746123913,4.41466024180595,4.425112737487987,4.435565233170023,4.44601772885206,4.456470224534097,4.466922720216133,4.47737521589817,4.4878277115802065,4.498280207262243,4.50873270294428,4.5191851986263165,4.529637694308353,4.54009018999039,4.5505426856724265,4.560995181354462,4.571447677036499,4.581900172718536,4.592352668400572,4.602805164082609,4.6132576597646455,4.623710155446682,4.634162651128719,4.6446151468107555,4.655067642492792,4.665520138174829,4.6759726338568655,4.686425129538902,4.696877625220939,4.707330120902975,4.717782616585012,4.728235112267049,4.738687607949085,4.749140103631122,4.759592599313158,4.7700450949951945,4.780497590677231,4.790950086359268,4.801402582041304,4.811855077723341,4.822307573405378,4.832760069087414,4.843212564769451,4.853665060451488,4.864117556133524,4.874570051815561,4.885022547497598,4.895475043179634,4.90592753886167,4.916380034543707,4.926832530225743,4.93728502590778,4.947737521589817,4.958190017271853,4.96864251295389,4.979095008635927,4.989547504317963,5.0],"xaxis":"x","y":[1.7065560392638948,1.7089996964691814,1.711443353674468,1.7138870108797544,1.7163306680850408,1.7187743252903274,1.721217982495614,1.7236616397009006,1.7261052969061872,1.7285489541114734,1.73099261131676,1.7334362685220466,1.7358799257273332,1.7383235829326196,1.740767240137906,1.7432108973431926,1.7456545545484792,1.7480982117537658,1.7505418689590524,1.7529855261643388,1.7554291833696254,1.7578728405749118,1.7603164977801984,1.762760154985485,1.7652038121907716,1.7676474693960578,1.7700911266013444,1.772534783806631,1.7749784410119176,1.777422098217204,1.7798657554224904,1.782309412627777,1.7847530698330636,1.7871967270383502,1.7896403842436368,1.7920840414489234,1.79452769865421,1.7969713558594962,1.7994150130647828,1.8018586702700694,1.804302327475356,1.8067459846806426,1.8091896418859288,1.8116332990912154,1.814076956296502,1.8165206135017886,1.8189642707070752,1.8214079279123614,1.823851585117648,1.8262952423229346,1.8287388995282212,1.8311825567335078,1.8336262139387944,1.8360698711440806,1.8385135283493672,1.8409571855546538,1.8434008427599404,1.8458444999652266,1.8482881571705132,1.8507318143757998,1.8531754715810864,1.855619128786373,1.8580627859916596,1.8605064431969458,1.8629501004022324,1.865393757607519,1.8678374148128056,1.8702810720180922,1.8727247292233788,1.875168386428665,1.8776120436339516,1.8800557008392382,1.8824993580445248,1.8849430152498114,1.887386672455098,1.8898303296603847,1.8922739868656708,1.8947176440709574,1.897161301276244,1.8996049584815302,1.9020486156868168,1.9044922728921034,1.90693593009739,1.9093795873026767,1.9118232445079633,1.9142669017132499,1.916710558918536,1.9191542161238226,1.9215978733291093,1.9240415305343959,1.926485187739682,1.9289288449449686,1.9313725021502552,1.9338161593555419,1.9362598165608285,1.938703473766115,1.9411471309714012,1.9435907881766878,1.9460344453819745,1.948478102587261],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Average Rating"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Review Polarization Points"}},"legend":{"tracegroupgap":0},"margin":{"t":25,"l":65,"r":10,"b":30},"height":511.1949685534591,"width":817.9119496855345},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('785ae0da-2ac7-4bca-ad0d-5b6d1a2a3261');
+var gd = document.getElementById('3e1593d2-e867-464d-8fea-220132304fd5');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1777,124 +1824,86 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="most-polarizing-topics-according-to-residuals-away-from-the-linear-fit" class="level5">
-<h5 class="anchored" data-anchor-id="most-polarizing-topics-according-to-residuals-away-from-the-linear-fit">Most polarizing topics according to residuals away from the linear fit:</h5>
-<div class="cell" data-execution_count="67">
-<details>
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">"residuals"</span>] <span class="op">=</span> topic_stats[<span class="st">"pol_points"</span>] <span class="op">-</span> np.poly1d(line_fit)(</span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    topic_stats[<span class="st">"avg_rating"</span>]</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>Markdown(</span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>    tabulate(</span>
-<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>        topic_stats[<span class="st">"residuals"</span>]</span>
-<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>        .to_frame()</span>
-<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>        .sort_values(<span class="st">"residuals"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>        .head(),</span>
-<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>        showindex<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a>        headers<span class="op">=</span><span class="st">"keys"</span>,</span>
-<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a>        tablefmt<span class="op">=</span><span class="st">"pipe"</span>,</span>
-<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="67">
-<div id="tbl-pol-topics" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;4: Most polarizing topics by distance from the fit.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">topic</th>
-<th style="text-align: right;">residuals</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">society-culture-relationships</td>
-<td style="text-align: right;">0.0330041</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">news-politics</td>
-<td style="text-align: right;">0.0319741</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">news-news-commentary</td>
-<td style="text-align: right;">0.0302625</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">science-life-sciences</td>
-<td style="text-align: right;">0.0295444</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sports-wrestling</td>
-<td style="text-align: right;">0.0283977</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="least-polarizing" class="level5">
-<h5 class="anchored" data-anchor-id="least-polarizing">Least polarizing:</h5>
+<section id="calculating-distance-from-the-linear-fit" class="level5">
+<h5 class="anchored" data-anchor-id="calculating-distance-from-the-linear-fit">Calculating distance from the linear fit:</h5>
 <div class="cell" data-execution_count="68">
 <details>
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">"residuals"</span>] <span class="op">=</span> topic_stats[<span class="st">"pol_points"</span>] <span class="op">-</span> np.poly1d(line_fit)(</span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>    topic_stats[<span class="st">"avg_rating"</span>]</span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>Markdown(</span>
-<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>    tabulate(</span>
-<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>        topic_stats[<span class="st">"residuals"</span>]</span>
-<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>        .to_frame()</span>
-<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>        .sort_values(<span class="st">"residuals"</span>, ascending<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>        .head(),</span>
-<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a>        showindex<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>        headers<span class="op">=</span><span class="st">"keys"</span>,</span>
-<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a>        tablefmt<span class="op">=</span><span class="st">"pipe"</span>,</span>
-<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="68">
-<div id="tbl-non_pol-topics" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;5: Least polarizing topics by distance from the fit.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">topic</th>
-<th style="text-align: right;">residuals</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">fiction-science-fiction</td>
-<td style="text-align: right;">-0.0633455</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">sports-tennis</td>
-<td style="text-align: right;">-0.0620044</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">fiction-drama</td>
-<td style="text-align: right;">-0.0566427</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">sports-volleyball</td>
-<td style="text-align: right;">-0.0443606</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sports-cricket</td>
-<td style="text-align: right;">-0.0388314</td>
-</tr>
-</tbody>
-</table>
+</div>
+<div id="tbl-pol" class="tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Topic polarization results from <a href="#fig-topics-scatter">Figure&nbsp;9</a>. The topics are grouped into Polarizing, Non-Polarizing, and Neutral based on whether they are above or below the linear fit by 1 standard deviation of residuals.</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<iframe width="800" height="600" src="https://lookerstudio.google.com/embed/reporting/7e9a42b5-f87e-4f60-9692-75d1838c4b48/page/DuBTD" frameborder="0" style="border:0" allowfullscreen="">
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</iframe>
 </div>
 </div>
 </div>
+</section>
+<section id="does-the-average-comment-length-correlate-with-topic-polarization-or-average-rating" class="level4" data-number="4.0.1">
+<h4 data-number="4.0.1" class="anchored" data-anchor-id="does-the-average-comment-length-correlate-with-topic-polarization-or-average-rating"><span class="header-section-number">4.0.1</span> Does the average comment length correlate with topic polarization or average rating?</h4>
+<section id="preparing-the-data-for-looker-studio" class="level5">
+<h5 class="anchored" data-anchor-id="preparing-the-data-for-looker-studio">Preparing the data for Looker Studio:</h5>
+<div class="cell" data-execution_count="69">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>topic_comments<span class="op">=</span>{}</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> topic <span class="kw">in</span> topics_arr[<span class="st">'category'</span>]:</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>    topic_comments[topic]<span class="op">=</span>con.execute(</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"""--sql</span></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a><span class="ss">  SELECT AVG(LEN(content))</span></span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a><span class="ss">  FROM database.reviews</span></span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  WHERE podcast_id IN (</span></span>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a><span class="ss">    SELECT DISTINCT podcast_id</span></span>
+<span id="cb75-10"><a href="#cb75-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    FROM database.categories</span></span>
+<span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    WHERE category = '</span><span class="sc">{</span>topic<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a><span class="ss">  )</span></span>
+<span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a><span class="ss">            """</span></span>
+<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a>).fetchone()</span>
+<span id="cb75-15"><a href="#cb75-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-16"><a href="#cb75-16" aria-hidden="true" tabindex="-1"></a>topic_comments<span class="op">=</span>pd.Series(topic_comments,name<span class="op">=</span><span class="st">'comment_length'</span>)</span>
+<span id="cb75-17"><a href="#cb75-17" aria-hidden="true" tabindex="-1"></a>topic_stats<span class="op">=</span>pd.concat([topic_stats,topic_comments],axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb75-18"><a href="#cb75-18" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">'comment_length'</span>]<span class="op">=</span>topic_stats[<span class="st">'comment_length'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">float</span>(x[<span class="dv">0</span>]))</span>
+<span id="cb75-19"><a href="#cb75-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-20"><a href="#cb75-20" aria-hidden="true" tabindex="-1"></a>topic_stats.index.name<span class="op">=</span><span class="st">'topic'</span></span>
+<span id="cb75-21"><a href="#cb75-21" aria-hidden="true" tabindex="-1"></a>topic_stats[<span class="st">'residuals'</span>]<span class="op">=</span>topic_stats[<span class="st">'residuals'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb75-22"><a href="#cb75-22" aria-hidden="true" tabindex="-1"></a>topic_stats.to_csv(<span class="st">'topic_stats.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="fig-comment_l" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<iframe width="800" height="450" src="https://lookerstudio.google.com/embed/reporting/25930b5f-84e2-4c6c-9e38-3bebe45fd2a0/page/DuBTD" frameborder="0" style="border:0" allowfullscreen="">
+</iframe>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10: The dependance of average comment length on the average rating of reviews of podcasts by specific topic. The Topics are categorized in accordance to <a href="#fig-topics-scatter">Figure&nbsp;9</a> by one standard deviation from the fit.</figcaption><p></p>
+</figure>
+</div>
+<p>There seems to be a possible tendency for more polarizing topics to have longer reviews if the average is lower.</p>
 </section>
 <section id="section-summary" class="level5">
 <h5 class="anchored" data-anchor-id="section-summary">Section summary</h5>
-<p>The data presented in <a href="#fig-topics-scatter">Figure&nbsp;9</a> supports the notion that the most polarizing topics include news-politics and news-commentary. These topics are often associated with a higher likelihood of polarization due to the diverse opinions and perspectives they encompass. On the other hand, the least polarizing topics, such as different sports shows and fiction, align with our observational intuition as they generally evoke less controversy and strong opinions.</p>
+<p>The data presented in <a href="#fig-topics-scatter">Figure&nbsp;9</a> supports the notion that the most polarizing topics include news-politics and news-commentary and relationships. These topics are often associated with a higher likelihood of polarization due to the diverse opinions and perspectives they encompass. On the other hand, the least polarizing topics, such as different sports shows and fiction, align with our observational intuition as they generally evoke less controversy and strong opinions.</p>
 </section>
+</section>
+</section>
+<section id="conclusions" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">5</span> Conclusions</h2>
+<p>The following insights were found in this analysis:</p>
+<ul>
+<li>There is a clear tendency for some people to continuously write bad reviews with 2.02% to 2.31% of all users that wrote between 5 and 10 reviews consistently writing only negative reviews with ratings of “1” or “2”.</li>
+<li>Some topics are more polarizing than others and their ratings consist of more extreme values. The most polarizing topics were news politics and commentary, relationships and life sciences.</li>
+</ul>
+<p>These insights provide evidence that the ratings are influenced by reviewer biases rather than solely reflecting the quality of the podcasts. The presence of biased negative reviews could potentially result in lower rankings for new and upcoming podcasts in an unadjusted suggestion algorithm, creating a negative cycle for emerging creators. Therefore, when designing such an algorithm, it is crucial to consider weighting potentially biased reviews appropriately to mitigate these effects and ensure fair recommendations for all podcasts.</p>
 </section>
 
 </main>
