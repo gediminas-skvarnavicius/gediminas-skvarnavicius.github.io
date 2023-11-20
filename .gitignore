@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 home_credit/data/
 home_credit/temp/
+covid_19/.vscode/settings.json
